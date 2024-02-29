@@ -22,14 +22,24 @@ body{
 /*Header*/
 header{
     background-color: var(--color3);
+    border-radius: 2rem;
+    padding: .7rem;
+    margin-bottom: 2rem;
     h1{
         color: var(--color4);
+        text-align: center;
+        font-size: max(1.6rem,2.3rem);
+        font-family: var(--txt1);
+        font-weight: 600;
     }
 }
 /*Main*/
 main{
     background-color: var(--color1);
     color: var(--color2);
+    display: grid;
+    grid-template-columns: 10% auto 10% ;
+    grid-template-rows: max-content max-content;
     #add{
     }
     #the_stack{
@@ -43,8 +53,15 @@ main{
     section{
        
     }
-    main>button{
-
+    button{
+        background-color: var(--color2);
+        color: var(--color1);
+        padding: .2rem;
+        border: .1rem var(--color2) solid;
+        border-radius: .15rem;
+        font-size: 1.9rem;
+        font-weight: 500;
+        font-family: var(--txt1);
     }
 }
 /*Footer*/
