@@ -17,17 +17,19 @@
 body{
     margin: 0;
     padding: 3rem;
+    background-color: var(--color4);
 }
 /*Header*/
 header{
     background-color: var(--color3);
     h1{
-        color: var(--color1);
+        color: var(--color4);
     }
 }
 /*Main*/
 main{
     background-color: var(--color1);
+    color: var(--color2);
     #add{
     }
     #the_stack{
