@@ -37,31 +37,101 @@ header{
 main{
     background-color: var(--color1);
     color: var(--color2);
+    padding: .5rem;
+    border: 2px var(--color3) dotted;
+    border-radius: 2rem;
     display: grid;
-    grid-template-columns: 10% auto 10% ;
-    grid-template-rows: max-content max-content;
+    grid-template-columns: 80px auto 80px;
+    grid-template-rows: 20vh 70vh 50px;
     #add{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        p{
+            font-size: .8rem;
+        }
     }
     #the_stack{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        border: 3px var(--color2) solid;
+        border-radius: 5px;
+        h1{
+            font-family: var(--txt2);
+            font-size: 1.5rem;
+            text-align: center;
+            text-decoration: underline;
+        }
        div{
-
+        height: 200px;
        } 
     }
     #remove{
-       
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
     }
     section{
-       
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        h1{
+            font-size: 1.2rem;
+            font-family: var(--txt2);
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+        }
+        span{
+            height: 3rem;
+            width: 3rem;
+            background-color: var(--color2);
+            color: var(--color4);
+            border-radius: 50%;
+        }
+        button{
+            box-sizing: border-box;
+            height: 2rem;
+            width: max-content;
+            padding-top: .3rem;
+            padding-bottom: .3rem;
+        }      
     }
     button{
-        background-color: var(--color2);
+        background-color: var(--color3);
         color: var(--color1);
         padding: .2rem;
         border: .1rem var(--color2) solid;
         border-radius: .15rem;
-        font-size: 1.9rem;
+        font-size: max(1.2rem, .8rem);
         font-weight: 500;
         font-family: var(--txt1);
     }
 }
+main p{
+    font-size: .9rem;
+    font-family: var(--txt1);
+    font-weight: 800;
+}
 /*Footer*/
+footer{
+    background-color: var(--color3);
+    text-align: center;
+    height: min(8vh, 3rem);
+    line-height: 3rem;
+    border-radius: 10%;
+    p{
+        color: var(--color4);
+        font-family: var(--txt1);
+        font-weight: 600;
+        font-size: 1.9rem;
+    }
+}
