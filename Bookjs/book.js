@@ -1,59 +1,45 @@
 
-const main = document.querySelector('main');
-const addBtn = main.querySelector('#add_btn');
-const removeBtn = main.querySelector('#remove_btn');
-const displayBtn = main.querySelector('#display_btn');
-const numberDisplay = main.querySelector('#numberDisplay');
+// Assuming you have these elements somewhere in your HTML
+const bookShelfDiv = document.querySelector('#the_stack');
+const addBtn = document.querySelector('#add_btn');
+const removeBtn = document.querySelector('#remove_btn');
+const numberDisplayDiv = document.querySelector('#numberDisplay');
+const displayBtn = document.querySelector('#display_btn');
 
-// Creating a class of stack. It has methods to push, pop, and peek.
-class BookStack {
-    constructor() {
-        this.books = [];
-        this.bookShelf = document.getElementById('book_shelf');
+function stackBook() {
+  const book_no = document.createElement('span');
+  book_no.classList.add('book-no');
+
+  const push = () => {
+    if (bookShelfDiv.children.length < 10) {
+      const book = document.createElement('div');
+      book.classList.add('book');
+      book_no.textContent = bookShelfDiv.children.length + 1;
+      book.appendChild(book_no);
+      bookShelfDiv.appendChild(book);
+    }
+  };
+
+  const pop = () => {
+    if (bookShelfDiv.children.length > 0) {
+      bookShelfDiv.removeChild(bookShelfDiv.children[bookShelfDiv.children.length - 1]);
     }
 
-    push() {
-        const book = document.createElement('div');
-        book.setAttribute('id', 'book');
-        this.books.push(book);
-        this.bookShelf.appendChild(book);
-        this.animatePush(book);
+    if (bookShelfDiv.children.length === 0) {
+      numberDisplayDiv.style.backgroundColor = 'red';
     }
+  };
 
-    pop() {
-        if (this.books.length > 0) {
-            const poppedBook = this.books.pop();
-            this.animatePop(poppedBook);
-        } else {
-            console.log('No books to remove.');
-        }
-    }
+  const peek = () => {
+    numberDisplayDiv.textContent = bookShelfDiv.children.length;
+  };
 
-    peek() {
-        return this.books.length;
-    }
-
-    animatePush(book) {
-        // Add CSS animation for pushing a book
-        book.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            book.style.transform = 'translateY(0)';
-        }, 500); // Adjust the duration as needed
-    }
-
-    animatePop(book) {
-        // Add CSS animation for popping a book
-        book.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-            book.style.display = 'none';
-        }, 500); // Adjust the duration as needed
-    }
+  // Adding event listeners outside the functions
+  addBtn.addEventListener('click', push);
+  removeBtn.addEventListener('click', pop);
+  displayBtn.addEventListener('click', peek);
 }
 
-const bookStack = new BookStack();
-
-// Event listeners for buttons
-addBtn.addEventListener('click', () => bookStack.push());
-removeBtn.addEventListener('click', () => bookStack.pop());
-displayBtn.addEventListener('click', () => numberDisplay.textContent = bookStack.peek());
+// Call the function to initialize
+stackBook();
 
