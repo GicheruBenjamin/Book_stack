@@ -100,6 +100,10 @@ section {
         background-color: var(--color2);
         color: var(--color4);
         border-radius: 50%;
+        text-align: center;
+        text-wrap: wrap;
+        font-size: large;
+        font-family: var(--color1);
     }
     button {
         box-sizing: border-box;

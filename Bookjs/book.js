@@ -1,21 +1,17 @@
 
 // Assuming you have these elements somewhere in your HTML
-const bookShelfDiv = document.querySelector('#the_stack');
+const bookShelfDiv = document.querySelector('#book_shelf');
 const addBtn = document.querySelector('#add_btn');
 const removeBtn = document.querySelector('#remove_btn');
 const numberDisplayDiv = document.querySelector('#numberDisplay');
 const displayBtn = document.querySelector('#display_btn');
 
 function stackBook() {
-  const book_no = document.createElement('span');
-  book_no.classList.add('book-no');
-
+  const book = document.createElement('div');
+  book.classList.add('book');
+  
   const push = () => {
     if (bookShelfDiv.children.length < 10) {
-      const book = document.createElement('div');
-      book.classList.add('book');
-      book_no.textContent = bookShelfDiv.children.length + 1;
-      book.appendChild(book_no);
       bookShelfDiv.appendChild(book);
     }
   };
