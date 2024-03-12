@@ -39,6 +39,9 @@ header{
 main {
     background-color: var(--color1);
     color: var(--color2);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--txt1);
     padding: .5rem;
     border: 2px var(--color3) dotted;
     border-radius: 2rem;
@@ -64,20 +67,46 @@ main {
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: .5fr max-content;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     h1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
         font-family: var(--txt2);
         font-size: 1.5rem;
         text-align: center;
         text-decoration: underline;
     }
-    #book_shelf {
-        height: 55vh;
-        width: 60vw;
-        border-bottom: 4px var(--color3) solid;
+    #book_shelf3 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        height: 300px;
+        border-bottom: 5px var(--color4) solid;
     }
+    #book_shelf2 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: 300px;
+        border-bottom: 5px var(--color4) solid;
+    }
+    #book_shelf1 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        height: 300px;
+        border-bottom: 5px var(--color4) solid;
+    }  
+
 }
 
 /* Bottom Row - Display Section */
@@ -145,10 +174,5 @@ footer{
     border-top-left-radius: 10%;
     border-bottom-left-radius: 10%;
 }
-.book_no{
-    height: 100%;
-    width: 100%;
-    background-color: var(--color1);
-    text-align: center;
-}
+
 
